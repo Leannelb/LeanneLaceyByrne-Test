@@ -1,0 +1,48 @@
+.letter {
+  color: #337ab7;
+}
+ul {
+  list-style: none;
+}
+
+.heading {
+  margin-top: 200px;
+}
+
+.openDrawer {
+  padding: 1%;
+  color: #337ab7;
+  position: fixed;
+  margin: 2%;
+  font-size: 2em;
+}
+
+.navigation {
+  width: 20%;
+  position: fixed;
+  height: 100%;
+  background-color: #337ab7;
+  z-index: 3;
+}
+
+.close-nav {
+  height: 5%;
+  width: 100%;
+}
+
+.navigation ul {
+  height: 100%;
+}
+
+.navigation li {
+  height: 10%;
+  width: 100%;
+  margin-bottom: 10%;
+  color: #fff;
+}
+
+.navigation li:hover {
+  border-left: solid 5px rgb(0, 0, 0);
+  border-bottom: 0px;
+  color: rgb(0, 0, 0);
+}

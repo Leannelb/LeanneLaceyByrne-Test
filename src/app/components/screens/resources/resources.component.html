@@ -1,71 +1,24 @@
-<!-- div.vm -->
-<div class="row">
-    <div class="col-xs-2">
-        <h3>Resources</h3>
-    </div>
-
-    <div class="col-xs-10">
-        <!-- heading.vm -->
-        <h1 class="pull-left">Masters</h1>
-    </div>
-</div>
-
-<div class="row">
-<div class="col-xs-2">
-    <ul class="nav nav-pills nav-stacked">
-
-        <li class="active" role="presentation">
-            <a href="http://localhost:10080/flexxource-grails/resourceDetail/show/11">
-                Masters
-            </a>
-        </li>
-
-        <li role="presentation">
-            <a href="http://localhost:10080/flexxource-grails/resourceDetail/show/12">
-                Fellows
-            </a>
-        </li>
-
-        <li role="presentation">
-            <a href="http://localhost:10080/flexxource-grails/resourceDetail/show/13">
-                Callaghan
-            </a>
-        </li>
-
-        <li role="presentation">
-            <a href="http://localhost:10080/flexxource-grails/resourceDetail/show/14">
-                Tester
-            </a>
-        </li>
-
-        <li role="presentation">
-            <a href="http://localhost:10080/flexxource-grails/resourceDetail/show/15">
-                Support
-            </a>
-        </li>
-
-    </ul>
-</div>
-<!-- div.vm -->
-<div class="col-xs-10">
-    <p>Content will go here</p>
-</div>
-
-<!-- div.vm -->
-<div class="row">
-    <div class="container-fluid">
-        <!-- div.vm -->
-        <div class="col-xs-12">
-            <!-- p.vm -->
-            <p>
-                <!-- text.vm -->
-                © Copyright 2019 Flexx Innovations Ltd.
-            </p>
-        </div>
-    </div>
+<div class="openDrawer" (click)="navigationDrawer()">
+	<span class="glyphicon glyphicon-plus"></span>
+	<ul>
+		<li><span class="letter">M</span></li>
+		<li><span class="letter">F</span></li>
+		<li><span class="letter">C</span></li>
+		<li><span class="letter">T</span></li>
+		<li><span class="letter">S</span></li>
+	</ul>
 </div>
 
 
-<div class="footer" role="contentinfo"></div>
-<div id="spinner" class="spinner" style="display:none;">Loading…</div>
-
+<div class="navigation" [@navigation]="navigation">
+	<div class="close-nav" (click)="navigationDrawer()">
+		<span class="glyphicon glyphicon-plus"></span>
+	</div>
+	<ul>
+		<li>Masters</li>
+		<li>Fellows</li>
+		<li>Callaghan</li>
+		<li>Tester</li>
+		<li>Support</li>
+	</ul>
+</div>
