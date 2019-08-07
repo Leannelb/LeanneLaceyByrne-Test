@@ -1,291 +1,301 @@
 <!-- div.vm -->
 <div class="row">
-    <div class="container-fluid">
-        <!-- div.vm -->
-        <div class="col-xs-12">
-            <!-- heading.vm -->
-            <h1>View a User Story</h1>
+	<div class="container-fluid">
+		<!-- div.vm -->
+		<div class="col-xs-12">
+			<!-- heading.vm -->
+			<h1>View a User Story</h1>
 
-            <p>The details of the User Story are displayed below.</p>
+			<p>The details of the User Story are displayed below.</p>
 
 
-        </div>
-    </div>
+		</div>
+	</div>
 </div>
 <!-- div.vm -->
 <div class="row">
-<div class="container-fluid">
-<!-- div.vm -->
-<div class="col-md-6">
-    <!-- panel.vm -->
-    <div class="panel panel-default">
-        <!-- panelHeading.vm -->
-        <div class="panel-heading clearfix">
-            <!-- heading.vm -->
-            <h4 class="panel-title pull-left">User Story</h4>
-            <!-- div.vm -->
-            <div class="btn-group pull-right">
-                <!-- link.vm -->
-                <a href="http://localhost:10080/jackanory-grails/userStory/create" title="Create a User Story" class="btn btn-primary btn-xs">
-                    <!-- icon.vm -->
-                    <span class="glyphicon glyphicon-plus"></span></a>
-                <!-- link.vm -->
-                <a href="http://localhost:10080/jackanory-grails/userStory/edit/1" title="Update a User Story" class="btn btn-primary btn-xs">
-                    <!-- icon.vm -->
-                    <span class="glyphicon glyphicon-pencil"></span></a>
-                <!-- link.vm -->
-                <a href="http://localhost:10080/jackanory-grails/userStory/showDelete/1" title="Delete a User Story" class="btn btn-danger btn-xs">
-                    <!-- icon.vm -->
-                    <span class="glyphicon glyphicon-trash"></span></a>
-            </div>
-        </div>
-        <!-- workflow.vm -->
+	<div class="container-fluid">
+		<!-- div.vm -->
+		<div class="col-md-6">
+			<!-- panel.vm -->
+			<div class="panel panel-default">
+				<!-- panelHeading.vm -->
+				<div class="panel-heading clearfix">
+					<!-- heading.vm -->
+					<h4 class="panel-title pull-left">User Story</h4>
+					<!-- div.vm -->
+					<div class="btn-group pull-right">
+						<!-- link.vm -->
+						<a href="http://localhost:10080/jackanory-grails/userStory/create" title="Create a User Story" class="btn btn-primary btn-xs">
+							<!-- icon.vm -->
+							<span class="glyphicon glyphicon-plus"></span></a>
+						<!-- link.vm -->
+						<a href="http://localhost:10080/jackanory-grails/userStory/edit/1" title="Update a User Story" class="btn btn-primary btn-xs">
+							<!-- icon.vm -->
+							<span class="glyphicon glyphicon-pencil"></span></a>
+						<!-- link.vm -->
+						<a href="http://localhost:10080/jackanory-grails/userStory/showDelete/1" title="Delete a User Story" class="btn btn-danger btn-xs">
+							<!-- icon.vm -->
+							<span class="glyphicon glyphicon-trash"></span></a>
+					</div>
+				</div>
+				<!-- workflow.vm -->
 
-        <div class="navbar-default clearfix">
-            <div class="navbar-header">
-                <span class="navbar-brand">Workflow (Complete): </span>
-            </div>
-            <ul class="nav navbar-nav pull-right">
+				<div class="navbar-default clearfix">
+					<div class="navbar-header">
+						<span class="navbar-brand">Workflow (Complete): </span>
+					</div>
+					<ul class="nav navbar-nav pull-right">
 
-                <li>
-                    <a href="http://localhost:10080/jackanory-grails/userStory/trigger/1?triggerCode=REOPEN" title="Reopen">
-                        Reopen
-                    </a>
-                </li>
+						<li>
+							<a href="http://localhost:10080/jackanory-grails/userStory/trigger/1?triggerCode=REOPEN" title="Reopen">
+								Reopen
+							</a>
+						</li>
 
-                <li>
-                    <a href="http://localhost:10080/jackanory-grails/userStory/trigger/1?triggerCode=CLOSE" title="Close">
-                        Close
-                    </a>
-                </li>
+						<li>
+							<a href="http://localhost:10080/jackanory-grails/userStory/trigger/1?triggerCode=CLOSE" title="Close">
+								Close
+							</a>
+						</li>
 
-            </ul>
-        </div>
+					</ul>
+				</div>
 
-        <!-- panelBody.vm -->
-        <div class="panel-body">
-            <!-- form.vm -->
-            <form action="/jackanory-grails/userStory/show/userStoryShowForm" method="post" class="form-horizontal" role="form">
-                <!-- div.vm -->
-                <div class="form-group">
-                    <!-- label.vm -->
-                    <label class="control-label col-xs-12 col-sm-3">Name</label><!-- div.vm -->
-                    <div class="input-group col-xs-12 col-sm-9">
-                        <!-- p.vm -->
-                        <p class="form-control-static">
-                            <!-- attributeValue.vm -->
+				<!-- panelBody.vm -->
+				<div class="panel-body">
+					<!-- form.vm -->
+					<form action="/jackanory-grails/userStory/show/userStoryShowForm" method="post" class="form-horizontal" role="form">
+						<!-- div.vm -->
+						<div class="form-group">
+							<!-- label.vm -->
+							<label class="control-label col-xs-12 col-sm-3">Name</label><!-- div.vm -->
+							<div class="input-group col-xs-12 col-sm-9">
+								<!-- p.vm -->
+								<p class="form-control-static">
+									<!-- attributeValue.vm -->
 
-                            A User Story
+									A User Story
 
-                        </p>
-                    </div>
-                </div>
-                <!-- div.vm -->
-                <div class="form-group">
-                    <!-- label.vm -->
-                    <label class="control-label col-xs-12 col-sm-3">Description</label><!-- div.vm -->
-                    <div class="input-group col-xs-12 col-sm-9">
-                        <!-- p.vm -->
-                        <p class="form-control-static">
-                            <!-- attributeValue.vm -->
+								</p>
+							</div>
+						</div>
+						<!-- div.vm -->
+						<div class="form-group">
+							<!-- label.vm -->
+							<label class="control-label col-xs-12 col-sm-3">Description</label><!-- div.vm -->
+							<div class="input-group col-xs-12 col-sm-9">
+								<!-- p.vm -->
+								<p class="form-control-static">
+									<!-- attributeValue.vm -->
 
-                            A User Story
+									A User Story
 
-                        </p>
-                    </div>
-                </div>
-                <!-- div.vm -->
-                <div class="form-group">
-                    <!-- label.vm -->
-                    <label class="control-label col-xs-12 col-sm-3">Category</label><!-- div.vm -->
-                    <div class="input-group col-xs-12 col-sm-9">
-                        <!-- p.vm -->
-                        <p class="form-control-static">
-                            <!-- attributeValue.vm -->
+								</p>
+							</div>
+						</div>
+						<!-- div.vm -->
+						<div class="form-group">
+							<!-- label.vm -->
+							<label class="control-label col-xs-12 col-sm-3">Category</label><!-- div.vm -->
+							<div class="input-group col-xs-12 col-sm-9">
+								<!-- p.vm -->
+								<p class="form-control-static">
+									<!-- attributeValue.vm -->
 
-                            Generator
+									Generator
 
-                        </p>
-                    </div>
-                </div>
-                <!-- div.vm -->
-                <div class="form-group">
-                    <!-- label.vm -->
-                    <label class="control-label col-xs-12 col-sm-3">Sub Category</label><!-- div.vm -->
-                    <div class="input-group col-xs-12 col-sm-9">
-                        <!-- p.vm -->
-                        <p class="form-control-static">
-                            <!-- attributeValue.vm -->
+								</p>
+							</div>
+						</div>
+						<!-- div.vm -->
+						<div class="form-group">
+							<!-- label.vm -->
+							<label class="control-label col-xs-12 col-sm-3">Sub Category</label><!-- div.vm -->
+							<div class="input-group col-xs-12 col-sm-9">
+								<!-- p.vm -->
+								<p class="form-control-static">
+									<!-- attributeValue.vm -->
 
-                            Site Configuration
+									Site Configuration
 
-                        </p>
-                    </div>
-                </div>
-                <!-- div.vm -->
-                <div class="form-group">
-                    <!-- label.vm -->
-                    <label class="control-label col-xs-12 col-sm-3">Estimated Start Date</label><!-- div.vm -->
-                    <div class="input-group col-xs-12 col-sm-9">
-                        <!-- p.vm -->
-                        <p class="form-control-static">
-                            <!-- attributeValue.vm -->
+								</p>
+							</div>
+						</div>
+						<!-- div.vm -->
+						<div class="form-group">
+							<!-- label.vm -->
+							<label class="control-label col-xs-12 col-sm-3">Estimated Start Date</label><!-- div.vm -->
+							<div class="input-group col-xs-12 col-sm-9">
+								<!-- p.vm -->
+								<p class="form-control-static">
+									<!-- attributeValue.vm -->
 
-                            15-Apr-2015
+									15-Apr-2015
 
-                        </p>
-                    </div>
-                </div>
-                <!-- div.vm -->
-                <div class="form-group">
-                    <!-- label.vm -->
-                    <label class="control-label col-xs-12 col-sm-3">Sponsor's Email</label><!-- div.vm -->
-                    <div class="input-group col-xs-12 col-sm-9">
-                        <!-- p.vm -->
-                        <p class="form-control-static">
-                            <!-- attributeValue.vm -->
+								</p>
+							</div>
+						</div>
+						<!-- div.vm -->
+						<div class="form-group">
+							<!-- label.vm -->
+							<label class="control-label col-xs-12 col-sm-3">Sponsor's Email</label><!-- div.vm -->
+							<div class="input-group col-xs-12 col-sm-9">
+								<!-- p.vm -->
+								<p class="form-control-static">
+									<!-- attributeValue.vm -->
 
-                        </p>
-                    </div>
-                </div>
-                <!-- div.vm -->
-                <div class="form-group">
-                    <!-- label.vm -->
-                    <label class="control-label col-xs-12 col-sm-3">Complexity</label><!-- div.vm -->
-                    <div class="input-group col-xs-12 col-sm-9">
-                        <!-- p.vm -->
-                        <p class="form-control-static">
-                            <!-- attributeValue.vm -->
+								</p>
+							</div>
+						</div>
+						<!-- div.vm -->
+						<div class="form-group">
+							<!-- label.vm -->
+							<label class="control-label col-xs-12 col-sm-3">Complexity</label><!-- div.vm -->
+							<div class="input-group col-xs-12 col-sm-9">
+								<!-- p.vm -->
+								<p class="form-control-static">
+									<!-- attributeValue.vm -->
 
-                        </p>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
+								</p>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- div.vm -->
+		<div class="col-md-6">
+			<!-- panel.vm -->
+			<div class="panel panel-primary">
+				<!-- panelHeading.vm -->
+				<div class="panel-heading clearfix">
+					<!-- heading.vm -->
+					<h4 class="panel-title pull-left">Requirements</h4>
+				</div>
+				<!-- panelBody.vm -->
+				<div class="panel-body">
+					<!-- panel.vm -->
+					<div class="panel panel-primary">
+						<!-- panelBody.vm -->
+						<div class="panel-body">
+							<!-- form.vm -->
+							<form action="/jackanory-grails/userStoryRequirement/saveFromUserStory/rightPanelForm" method="post" class="form-horizontal"
+							 role="form">
+								<!-- p.vm -->
+								<p>
+									<!-- text.vm -->
+									Use the input field below to create a new Requirement.
+								</p>
+								<!-- formGroup.vm -->
+								<div class="form-group ">
+									<!-- label.vm -->
+									<label for="requirement" class="control-label col-xs-12 col-sm-3">Requirement</label><!-- div.vm -->
+									<div class="input-group col-xs-12 col-sm-9">
+										<!-- textField.vm -->
+										<input id="requirement" name="requirement" class="form-control" placeholder="Enter Requirement" type="text">
+
+									</div>
+								</div>
+								<!-- div.vm -->
+								<div class="text-right">
+									<!-- div.vm -->
+									<div class="btn-toolbar">
+										<!-- submit.vm -->
+										<input name="submit" value="Create" class="btn btn-primary" id="submit" type="submit">
+									</div>
+									<!-- hiddenField.vm -->
+									<input name="userStoryId" value="1" id="userStoryId" type="hidden">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<!-- panelBody.vm -->
+				<div class="panel-body">
+					<!-- table.vm -->
+					<table id="UserStoryRequirementTable" class="table table-striped">
+						<caption>The table below displays a list of requirements for this User Story.</caption>
+						<thead>
+							<tr>
+								<th class="column-searchable column-orderable col-md-11">
+									Requirement
+								</th>
+								<th class="text-nowrap text-right col-md-1">
+									&nbsp;
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<tr>
+								<td class="column-searchable column-orderable col-md-11">
+									<!-- attributeValue.vm -->
+
+									ABC
+
+								</td>
+								<td class="text-nowrap text-right col-md-1">
+									<!-- div.vm -->
+									<div class="btn-group">
+										<!-- link.vm -->
+										<a href="/jackanory-grails/userStoryRequirement/deleteFromUserStory?userStoryId=1&userStoryRequirementId=6"
+										 title="Delete" class="btn btn-danger btn-xs">
+											<!-- icon.vm -->
+											<span class="glyphicon glyphicon-trash"></span></a>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="column-searchable column-orderable col-md-11">
+									<!-- attributeValue.vm -->
+
+									EFG
+
+								</td>
+								<td class="text-nowrap text-right col-md-1">
+									<!-- div.vm -->
+									<div class="btn-group">
+										<!-- link.vm -->
+										<a href="/jackanory-grails/userStoryRequirement/deleteFromUserStory?userStoryId=1&userStoryRequirementId=7"
+										 title="Delete" class="btn btn-danger btn-xs">
+											<!-- icon.vm -->
+											<span class="glyphicon glyphicon-trash"></span></a>
+									</div>
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-<!-- div.vm -->
-<div class="col-md-6">
-    <!-- panel.vm -->
-    <div class="panel panel-primary">
-        <!-- panelHeading.vm -->
-        <div class="panel-heading clearfix">
-            <!-- heading.vm -->
-            <h4 class="panel-title pull-left">Requirements</h4>
-        </div>
-        <!-- panelBody.vm -->
-        <div class="panel-body">
-            <!-- panel.vm -->
-            <div class="panel panel-primary">
-                <!-- panelBody.vm -->
-                <div class="panel-body">
-                    <!-- form.vm -->
-                    <form action="/jackanory-grails/userStoryRequirement/saveFromUserStory/rightPanelForm" method="post" class="form-horizontal" role="form">
-                        <!-- p.vm -->
-                        <p>
-                            <!-- text.vm -->
-                            Use the input field below to create a new Requirement.
-                        </p>
-                        <!-- formGroup.vm -->
-                        <div class="form-group ">
-                            <!-- label.vm -->
-                            <label for="requirement" class="control-label col-xs-12 col-sm-3">Requirement</label><!-- div.vm -->
-                            <div class="input-group col-xs-12 col-sm-9">
-                                <!-- textField.vm -->
-                                <input id="requirement" name="requirement" class="form-control" placeholder="Enter Requirement" type="text">
+<div class="container text-center">
 
-                            </div>
-                        </div>
-                        <!-- div.vm -->
-                        <div class="text-right">
-                            <!-- div.vm -->
-                            <div class="btn-toolbar">
-                                <!-- submit.vm -->
-                                <input name="submit" value="Create" class="btn btn-primary" id="submit" type="submit">
-                            </div>
-                            <!-- hiddenField.vm -->
-                            <input name="userStoryId" value="1" id="userStoryId" type="hidden">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- panelBody.vm -->
-        <div class="panel-body">
-            <!-- table.vm -->
-            <table id="UserStoryRequirementTable" class="table table-striped">
-                <caption>The table below displays a list of requirements for this User Story.</caption>
-                <thead>
-                <tr>
-                    <th class="column-searchable column-orderable col-md-11">
-                        Requirement
-                    </th>
-                    <th class="text-nowrap text-right col-md-1">
-                        &nbsp;
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-
-                <tr>
-                    <td class="column-searchable column-orderable col-md-11">
-                        <!-- attributeValue.vm -->
-
-                        ABC
-
-                    </td>
-                    <td class="text-nowrap text-right col-md-1">
-                        <!-- div.vm -->
-                        <div class="btn-group">
-                            <!-- link.vm -->
-                            <a
-                                    href="/jackanory-grails/userStoryRequirement/deleteFromUserStory?userStoryId=1&userStoryRequirementId=6"
-                                    title="Delete" class="btn btn-danger btn-xs">
-                                <!-- icon.vm -->
-                                <span class="glyphicon glyphicon-trash"></span></a>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="column-searchable column-orderable col-md-11">
-                        <!-- attributeValue.vm -->
-
-                        EFG
-
-                    </td>
-                    <td class="text-nowrap text-right col-md-1">
-                        <!-- div.vm -->
-                        <div class="btn-group">
-                            <!-- link.vm -->
-                            <a
-                                    href="/jackanory-grails/userStoryRequirement/deleteFromUserStory?userStoryId=1&userStoryRequirementId=7"
-                                    title="Delete" class="btn btn-danger btn-xs">
-                                <!-- icon.vm -->
-                                <span class="glyphicon glyphicon-trash"></span></a>
-                        </div>
-                    </td>
-                </tr>
-
-                </tbody>
-            </table>
-        </div>
-    </div>
+	  <div class="container">
+		<div class="row">
+		  <div>
+			<input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Start searching by id, name or location">
+		  </div>
+		  <table class="table table-striped">
+			<thead>
+			<tr>
+			  <th>Id</th>
+			  <th>Name</th>
+			  <th>Location</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr *ngFor="let item of searchItems | filter:searchText">
+			  <td>{{item.id}}</td>
+			  <td>{{item.name}}</td>
+			  <td>{{item.location}}</td>
+			</tr>
+			</tbody>
+		  </table>
+		</div>
+	  </div>
 </div>
-
-<!-- div.vm -->
-<div class="row">
-    <div class="container-fluid">
-        <!-- div.vm -->
-        <div class="col-xs-12">
-            <!-- p.vm -->
-            <p>
-                <!-- text.vm -->
-                © Copyright 2019 Flexx Innovations Ltd.
-            </p>
-        </div>
-    </div>
-</div>
-</div>
-
-<div class="footer" role="contentinfo"></div>

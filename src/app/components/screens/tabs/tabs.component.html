@@ -1,917 +1,1408 @@
 <!-- div.vm -->
 <div class="row">
-		<div class="container-fluid">
-			<!-- div.vm -->
-			<div class="col-xs-12">
-				<!-- heading.vm -->
-				<h1>View a Security User</h1>
-	
-				<p>The details of the Security User are displayed below.</p>
-	
-	
-			</div>
-		</div>
-	</div>
-	<!-- div.vm -->
-	<div class="row">
-		<div class="container-fluid">
-			<!-- div.vm -->
-			<div class="col-xs-12">
-				<!-- panel.vm -->
-				<div class="panel panel-primary">
-					<!-- panelHeading.vm -->
-					<div class="panel-heading clearfix">
-						<!-- heading.vm -->
-						<h4 class="panel-title pull-left">Security User</h4>
-						<!-- div.vm -->
-						<div class="btn-group pull-right">
-							<!-- link.vm -->
-							<a href="http://localhost:10080/jackanory-grails/securityUser/create" title="Create a Security User" class="btn btn-primary btn-xs">
-								<!-- icon.vm -->
-								<span class="glyphicon glyphicon-plus"></span></a>
-							<!-- link.vm -->
-							<a href="http://localhost:10080/jackanory-grails/securityUser/edit/1" title="Update a Security User" class="btn btn-primary btn-xs">
-								<!-- icon.vm -->
-								<span class="glyphicon glyphicon-pencil"></span></a>
-							<!-- link.vm -->
-							<a href="http://localhost:10080/jackanory-grails/securityUser/showDelete/1" title="Delete a Security User" class="btn btn-danger btn-xs">
-								<!-- icon.vm -->
-								<span class="glyphicon glyphicon-trash"></span></a>
-						</div>
-					</div>
-					<!-- panelBody.vm -->
-					<div class="panel-body">
-						<!-- form.vm -->
-						<form action="/jackanory-grails/securityUser/show/securityUserShowForm" method="post" class="form-horizontal" role="form">
-							<!-- div.vm -->
-							<div class="form-group">
-								<!-- label.vm -->
-								<label class="control-label col-xs-12 col-sm-3">Username</label><!-- div.vm -->
-								<div class="input-group col-xs-12 col-sm-9">
-									<!-- p.vm -->
-									<p class="form-control-static">
-										<!-- attributeValue.vm -->
-	
-										admin
-	
-									</p>
-								</div>
-							</div>
-							<!-- div.vm -->
-							<div class="form-group">
-								<!-- label.vm -->
-								<label class="control-label col-xs-12 col-sm-3">First Name</label><!-- div.vm -->
-								<div class="input-group col-xs-12 col-sm-9">
-									<!-- p.vm -->
-									<p class="form-control-static">
-										<!-- attributeValue.vm -->
-	
-										Initial
-	
-									</p>
-								</div>
-							</div>
-							<!-- div.vm -->
-							<div class="form-group">
-								<!-- label.vm -->
-								<label class="control-label col-xs-12 col-sm-3">Last Name</label><!-- div.vm -->
-								<div class="input-group col-xs-12 col-sm-9">
-									<!-- p.vm -->
-									<p class="form-control-static">
-										<!-- attributeValue.vm -->
-	
-										User
-	
-									</p>
-								</div>
-							</div>
-							<!-- div.vm -->
-							<div class="form-group">
-								<!-- label.vm -->
-								<label class="control-label col-xs-12 col-sm-3">Type</label><!-- div.vm -->
-								<div class="input-group col-xs-12 col-sm-9">
-									<!-- p.vm -->
-									<p class="form-control-static">
-										<!-- attributeValue.vm -->
-	
-										System Admin
-	
-									</p>
-								</div>
-							</div>
-							<!-- div.vm -->
-							<div class="form-group">
-								<!-- label.vm -->
-								<label class="control-label col-xs-12 col-sm-3">Email Address</label><!-- div.vm -->
-								<div class="input-group col-xs-12 col-sm-9">
-									<!-- p.vm -->
-									<p class="form-control-static">
-										<!-- attributeValue.vm -->
-	
-									</p>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- div.vm -->
-	<div class="row">
-	<div class="container-fluid">
-	<!-- div.vm -->
-	<div class="col-md-12">
-	<!-- tabList.vm -->
-	<ul role="tablist" class="nav nav-tabs">
-		<li class="active" role="presentation">
-			<a data-toggle="tab" role="tab" href="#securityGroupTab">
-				Security Group
-			</a>
-		</li>
-		<li role="presentation">
-			<a data-toggle="tab" role="tab" href="#securitySchemeTab">
-				Security Scheme
-			</a>
-		</li>
-		<li role="presentation">
-			<a data-toggle="tab" role="tab" href="#securityRoleTab">
-				Security Role
-			</a>
-		</li>
-	</ul>
-	<div class="tab-content">
-	<!-- tab.vm -->
-	<div class="active tab-pane" id="securityGroupTab">
-		<div class="clearfix">
-			<!-- panel.vm -->
-			<div class="panel panel-no-border">
-				<!-- panelHeading.vm -->
-				<div class="panel-heading clearfix">
-					<!-- heading.vm -->
-					<h4 class="panel-title pull-left">Security Group</h4>
-					<!-- div.vm -->
-					<div class="btn-group pull-right">
-						<!-- link.vm -->
-						<a
-								href="/jackanory-grails/securityUser/showAssociateSecurityGroup/1"
-								title="Associate a Security Group" class="btn btn-primary btn-xs">
-							<!-- icon.vm -->
-							<span class="glyphicon glyphicon-pencil"></span></a>
-					</div>
-				</div>
-				<!-- panelBody.vm -->
-				<div class="panel-body">
-					<!-- table.vm -->
-					<table id="securityUserSecurityGroupTable" class="table table-striped">
-						<caption>The table below displays a list of Security Group associated with this Security User.</caption>
-						<thead>
-						<tr>
-							<th class="column-orderable col-md-1">
-								Id
-							</th>
-							<th class="column-searchable column-orderable col-md-10">
-								Name
-							</th>
-							<th class="text-nowrap text-right col-md-1">
-								&nbsp;
-							</th>
-						</tr>
-						</thead>
-						<tbody>
-	
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="column-orderable col-md-1">
-								<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group">1</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">Admin Group</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a href="/jackanory-grails/securityGroup/show/1" title="Show Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-expand"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/edit/1" title="Update Security Group" class="btn btn-primary btn-xs">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									<a href="/jackanory-grails/securityGroup/showDelete/1" title="Delete" class="btn btn-danger btn-xs">
-										<span class="glyphicon glyphicon-trash"></span>
-									</a>
-								</div>
-							</td>
-						</tr>
-	
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- tab.vm -->
-	<div class="tab-pane" id="securitySchemeTab">
-		<div class="clearfix">
-			<!-- panel.vm -->
-			<div class="panel panel-no-border">
-				<!-- panelHeading.vm -->
-				<div class="panel-heading clearfix">
-					<!-- heading.vm -->
-					<h4 class="panel-title pull-left">Security Scheme</h4>
-					<!-- div.vm -->
-					<div class="btn-group pull-right">
-						<!-- link.vm -->
-						<a
-								href="/jackanory-grails/securityUser/showAssociateSecurityScheme/1"
-								title="Associate a Security Scheme" class="btn btn-primary btn-xs">
-							<!-- icon.vm -->
-							<span class="glyphicon glyphicon-pencil"></span></a>
-					</div>
-				</div>
-				<!-- panelBody.vm -->
-				<div class="panel-body">
-					<!-- table.vm -->
-					<table id="securityUserSecuritySchemeTable" class="table table-striped">
-						<caption>The table below displays a list of Security Scheme associated with this Security User.</caption>
-						<thead>
-						<tr>
-							<th class="column-orderable col-md-1">
-								Id
-							</th>
-							<th class="column-searchable column-orderable col-md-10">
-								Name
-							</th>
-							<th class="text-nowrap text-right col-md-1">
-								&nbsp;
-							</th>
-						</tr>
-						</thead>
-						<tbody>
-	
-						<tr>
-							<td class="column-orderable col-md-1">
-								<!-- link.vm -->
-								<a
-										href="/jackanory-grails/securityScheme/show/1"
-										title="Show Security Scheme">
-									<!-- attributeValue.vm -->
-	
-									1
-	
-								</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-10">
-								<!-- attributeValue.vm -->
-	
-								Admin Scheme
-	
-							</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a
-											href="/jackanory-grails/securityScheme/show/1"
-											title="Show Security Scheme" class="btn btn-primary btn-xs">
-										<!-- icon.vm -->
-										<span class="glyphicon glyphicon-expand"></span></a>
-									<!-- link.vm -->
-									<a
-											href="/jackanory-grails/securityScheme/edit/1"
-											title="Update Security Scheme" class="btn btn-primary btn-xs">
-										<!-- icon.vm -->
-										<span class="glyphicon glyphicon-pencil"></span></a>
-									<!-- link.vm -->
-									<a
-											href="/jackanory-grails/securityScheme/showDelete/1"
-											title="Delete" class="btn btn-danger btn-xs">
-										<!-- icon.vm -->
-										<span class="glyphicon glyphicon-trash"></span></a>
-								</div>
-							</td>
-						</tr>
-	
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- tab.vm -->
-	<div class="tab-pane" id="securityRoleTab">
-		<div class="clearfix">
-			<!-- panel.vm -->
-			<div class="panel panel-no-border">
-				<!-- panelHeading.vm -->
-				<div class="panel-heading clearfix">
-					<!-- heading.vm -->
-					<h4 class="panel-title pull-left">Security Role</h4>
-					<!-- div.vm -->
-					<div class="btn-group pull-right">
-						<!-- link.vm -->
-						<a
-								href="/jackanory-grails/securityRole/create"
-								title="Create a Security Role" class="btn btn-primary btn-xs">
-							<!-- icon.vm -->
-							<span class="glyphicon glyphicon-plus"></span></a>
-					</div>
-				</div>
-				<!-- panelBody.vm -->
-				<div class="panel-body">
-					<!-- table.vm -->
-					<table id="securityUserSecurityRoleTable" class="table table-striped">
-						<caption>The table below displays a list of Security Role associated with this Security User.</caption>
-						<thead>
-						<tr>
-							<th class="column-orderable col-md-1">
-								Id
-							</th>
-							<th class="column-searchable column-orderable col-md-5">
-								Name
-							</th>
-							<th class="column-searchable column-orderable col-md-5">
-								Security User
-							</th>
-							<th class="text-nowrap text-right col-md-1">
-								&nbsp;
-							</th>
-						</tr>
-						</thead>
-						<tbody>
-	
-						<tr>
-							<td class="column-orderable col-md-1">
-								<!-- link.vm -->
-								<a
-										href="/jackanory-grails/securityRole/show/1"
-										title="Show Security Role">
-									<!-- attributeValue.vm -->
-	
-									1
-	
-								</a>
-							</td>
-							<td class="column-searchable column-orderable col-md-5">
-								<!-- attributeValue.vm -->
-	
-								Admin Role
-	
-							</td>
-							<td class="column-searchable column-orderable col-md-5">
-								<!-- attributeValue.vm -->
-	
-								admin
-	
-							</td>
-							<td class="text-nowrap text-right col-md-1">
-								<!-- div.vm -->
-								<div class="btn-group">
-									<!-- link.vm -->
-									<a
-											href="/jackanory-grails/securityRole/show/1"
-											title="Show Security Role" class="btn btn-primary btn-xs">
-										<!-- icon.vm -->
-										<span class="glyphicon glyphicon-expand"></span></a>
-									<!-- link.vm -->
-									<a
-											href="/jackanory-grails/securityRole/edit/1"
-											title="Update Security Role" class="btn btn-primary btn-xs">
-										<!-- icon.vm -->
-										<span class="glyphicon glyphicon-pencil"></span></a>
-									<!-- link.vm -->
-									<a
-											href="/jackanory-grails/securityRole/showDelete/1"
-											title="Delete" class="btn btn-danger btn-xs">
-										<!-- icon.vm -->
-										<span class="glyphicon glyphicon-trash"></span></a>
-								</div>
-							</td>
-						</tr>
-	
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="container-fluid">
+    <!-- div.vm -->
+    <div class="col-xs-12">
+      <!-- heading.vm -->
+      <h1>View a Security User</h1>
 
-	<!-- div.vm -->
-	<div class="row">
-		<div class="container-fluid">
-			<!-- div.vm -->
-			<div class="col-xs-12">
-				<!-- p.vm -->
-				<p>
-					<!-- text.vm -->
-					© Copyright 2019 Flexx Innovations Ltd.
-				</p>
-			</div>
-		</div>
-	</div>
-	</div>
-	
-	<div class="footer" role="contentinfo"></div>
-	<div id="spinner" class="spinner" style="display:none;">Loading…</div>
+      <p>The details of the Security User are displayed below.</p>
+    </div>
+  </div>
+</div>
+<!-- div.vm -->
+<div class="row">
+  <div class="container-fluid">
+    <!-- div.vm -->
+    <div class="col-xs-12">
+      <!-- panel.vm -->
+      <div class="panel panel-primary">
+        <!-- panelHeading.vm -->
+        <div class="panel-heading clearfix">
+          <!-- heading.vm -->
+          <h4 class="panel-title pull-left">Security User</h4>
+          <!-- div.vm -->
+          <div class="btn-group pull-right">
+            <!-- link.vm -->
+            <a
+              href="http://localhost:10080/jackanory-grails/securityUser/create"
+              title="Create a Security User"
+              class="btn btn-primary btn-xs"
+            >
+              <!-- icon.vm -->
+              <span class="glyphicon glyphicon-plus"></span
+            ></a>
+            <!-- link.vm -->
+            <a
+              href="http://localhost:10080/jackanory-grails/securityUser/edit/1"
+              title="Update a Security User"
+              class="btn btn-primary btn-xs"
+            >
+              <!-- icon.vm -->
+              <span class="glyphicon glyphicon-pencil"></span
+            ></a>
+            <!-- link.vm -->
+            <a
+              href="http://localhost:10080/jackanory-grails/securityUser/showDelete/1"
+              title="Delete a Security User"
+              class="btn btn-danger btn-xs"
+            >
+              <!-- icon.vm -->
+              <span class="glyphicon glyphicon-trash"></span
+            ></a>
+          </div>
+        </div>
+        <!-- panelBody.vm -->
+        <div class="panel-body">
+          <!-- form.vm -->
+          <form
+            action="/jackanory-grails/securityUser/show/securityUserShowForm"
+            method="post"
+            class="form-horizontal"
+            role="form"
+          >
+            <!-- div.vm -->
+            <div class="form-group">
+              <!-- label.vm -->
+              <label class="control-label col-xs-12 col-sm-3">Username</label
+              ><!-- div.vm -->
+              <div class="input-group col-xs-12 col-sm-9">
+                <!-- p.vm -->
+                <p class="form-control-static">
+                  <!-- attributeValue.vm -->
+
+                  admin
+                </p>
+              </div>
+            </div>
+            <!-- div.vm -->
+            <div class="form-group">
+              <!-- label.vm -->
+              <label class="control-label col-xs-12 col-sm-3">First Name</label
+              ><!-- div.vm -->
+              <div class="input-group col-xs-12 col-sm-9">
+                <!-- p.vm -->
+                <p class="form-control-static">
+                  <!-- attributeValue.vm -->
+
+                  Initial
+                </p>
+              </div>
+            </div>
+            <!-- div.vm -->
+            <div class="form-group">
+              <!-- label.vm -->
+              <label class="control-label col-xs-12 col-sm-3">Last Name</label
+              ><!-- div.vm -->
+              <div class="input-group col-xs-12 col-sm-9">
+                <!-- p.vm -->
+                <p class="form-control-static">
+                  <!-- attributeValue.vm -->
+
+                  User
+                </p>
+              </div>
+            </div>
+            <!-- div.vm -->
+            <div class="form-group">
+              <!-- label.vm -->
+              <label class="control-label col-xs-12 col-sm-3">Type</label
+              ><!-- div.vm -->
+              <div class="input-group col-xs-12 col-sm-9">
+                <!-- p.vm -->
+                <p class="form-control-static">
+                  <!-- attributeValue.vm -->
+
+                  System Admin
+                </p>
+              </div>
+            </div>
+            <!-- div.vm -->
+            <div class="form-group">
+              <!-- label.vm -->
+              <label class="control-label col-xs-12 col-sm-3"
+                >Email Address</label
+              ><!-- div.vm -->
+              <div class="input-group col-xs-12 col-sm-9">
+                <!-- p.vm -->
+                <p class="form-control-static">
+                  <!-- attributeValue.vm -->
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- div.vm -->
+<div class="row">
+  <div class="container-fluid">
+    <!-- div.vm -->
+    <div class="col-md-12">
+      <!-- tabList.vm -->
+      <ul role="tablist" class="nav nav-tabs">
+        <li class="active" role="presentation">
+          <a data-toggle="tab" role="tab" href="#securityGroupTab">
+            Security Group
+          </a>
+        </li>
+        <li role="presentation">
+          <a data-toggle="tab" role="tab" href="#securitySchemeTab">
+            Security Scheme
+          </a>
+        </li>
+        <li role="presentation">
+          <a data-toggle="tab" role="tab" href="#securityRoleTab">
+            Security Role
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <!-- tab.vm -->
+        <div class="active tab-pane" id="securityGroupTab">
+          <div class="clearfix">
+            <!-- panel.vm -->
+            <div class="panel panel-no-border">
+              <!-- panelHeading.vm -->
+              <div class="panel-heading clearfix">
+                <!-- heading.vm -->
+                <h4 class="panel-title pull-left">Security Group</h4>
+                <!-- div.vm -->
+                <div class="btn-group pull-right">
+                  <!-- link.vm -->
+                  <a
+                    href="/jackanory-grails/securityUser/showAssociateSecurityGroup/1"
+                    title="Associate a Security Group"
+                    class="btn btn-primary btn-xs"
+                  >
+                    <!-- icon.vm -->
+                    <span class="glyphicon glyphicon-pencil"></span
+                  ></a>
+                </div>
+              </div>
+              <!-- panelBody.vm -->
+              <div class="panel-body">
+                <!-- table.vm -->
+                <table
+                  id="securityUserSecurityGroupTable"
+                  class="table table-striped"
+                >
+                  <caption>
+                    The table below displays a list of Security Group associated
+                    with this Security User.
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th class="column-orderable col-md-1">
+                        Id
+                      </th>
+                      <th class="column-searchable column-orderable col-md-10">
+                        Name
+                      </th>
+                      <th class="text-nowrap text-right col-md-1">
+                        &nbsp;
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <a
+                          href="/jackanory-grails/securityGroup/show/1"
+                          title="Show Security Group"
+                          >1</a
+                        >
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        Admin Group
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityGroup/show/1"
+                            title="Show Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-expand"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/edit/1"
+                            title="Update Security Group"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          <a
+                            href="/jackanory-grails/securityGroup/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- tab.vm -->
+        <div class="tab-pane" id="securitySchemeTab">
+          <div class="clearfix">
+            <!-- panel.vm -->
+            <div class="panel panel-no-border">
+              <!-- panelHeading.vm -->
+              <div class="panel-heading clearfix">
+                <!-- heading.vm -->
+                <h4 class="panel-title pull-left">Security Scheme</h4>
+                <!-- div.vm -->
+                <div class="btn-group pull-right">
+                  <!-- link.vm -->
+                  <a
+                    href="/jackanory-grails/securityUser/showAssociateSecurityScheme/1"
+                    title="Associate a Security Scheme"
+                    class="btn btn-primary btn-xs"
+                  >
+                    <!-- icon.vm -->
+                    <span class="glyphicon glyphicon-pencil"></span
+                  ></a>
+                </div>
+              </div>
+              <!-- panelBody.vm -->
+              <div class="panel-body">
+                <!-- table.vm -->
+                <table
+                  id="securityUserSecuritySchemeTable"
+                  class="table table-striped"
+                >
+                  <caption>
+                    The table below displays a list of Security Scheme
+                    associated with this Security User.
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th class="column-orderable col-md-1">
+                        Id
+                      </th>
+                      <th class="column-searchable column-orderable col-md-10">
+                        Name
+                      </th>
+                      <th class="text-nowrap text-right col-md-1">
+                        &nbsp;
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <!-- link.vm -->
+                        <a
+                          href="/jackanory-grails/securityScheme/show/1"
+                          title="Show Security Scheme"
+                        >
+                          <!-- attributeValue.vm -->
+
+                          1
+                        </a>
+                      </td>
+                      <td class="column-searchable column-orderable col-md-10">
+                        <!-- attributeValue.vm -->
+
+                        Admin Scheme
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityScheme/show/1"
+                            title="Show Security Scheme"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <!-- icon.vm -->
+                            <span class="glyphicon glyphicon-expand"></span
+                          ></a>
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityScheme/edit/1"
+                            title="Update Security Scheme"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <!-- icon.vm -->
+                            <span class="glyphicon glyphicon-pencil"></span
+                          ></a>
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityScheme/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <!-- icon.vm -->
+                            <span class="glyphicon glyphicon-trash"></span
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- tab.vm -->
+        <div class="tab-pane" id="securityRoleTab">
+          <div class="clearfix">
+            <!-- panel.vm -->
+            <div class="panel panel-no-border">
+              <!-- panelHeading.vm -->
+              <div class="panel-heading clearfix">
+                <!-- heading.vm -->
+                <h4 class="panel-title pull-left">Security Role</h4>
+                <!-- div.vm -->
+                <div class="btn-group pull-right">
+                  <!-- link.vm -->
+                  <a
+                    href="/jackanory-grails/securityRole/create"
+                    title="Create a Security Role"
+                    class="btn btn-primary btn-xs"
+                  >
+                    <!-- icon.vm -->
+                    <span class="glyphicon glyphicon-plus"></span
+                  ></a>
+                </div>
+              </div>
+              <!-- panelBody.vm -->
+              <div class="panel-body">
+                <!-- table.vm -->
+                <table
+                  id="securityUserSecurityRoleTable"
+                  class="table table-striped"
+                >
+                  <caption>
+                    The table below displays a list of Security Role associated
+                    with this Security User.
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th class="column-orderable col-md-1">
+                        Id
+                      </th>
+                      <th class="column-searchable column-orderable col-md-5">
+                        Name
+                      </th>
+                      <th class="column-searchable column-orderable col-md-5">
+                        Security User
+                      </th>
+                      <th class="text-nowrap text-right col-md-1">
+                        &nbsp;
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="column-orderable col-md-1">
+                        <!-- link.vm -->
+                        <a
+                          href="/jackanory-grails/securityRole/show/1"
+                          title="Show Security Role"
+                        >
+                          <!-- attributeValue.vm -->
+
+                          1
+                        </a>
+                      </td>
+                      <td class="column-searchable column-orderable col-md-5">
+                        <!-- attributeValue.vm -->
+
+                        Admin Role
+                      </td>
+                      <td class="column-searchable column-orderable col-md-5">
+                        <!-- attributeValue.vm -->
+
+                        admin
+                      </td>
+                      <td class="text-nowrap text-right col-md-1">
+                        <!-- div.vm -->
+                        <div class="btn-group">
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityRole/show/1"
+                            title="Show Security Role"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <!-- icon.vm -->
+                            <span class="glyphicon glyphicon-expand"></span
+                          ></a>
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityRole/edit/1"
+                            title="Update Security Role"
+                            class="btn btn-primary btn-xs"
+                          >
+                            <!-- icon.vm -->
+                            <span class="glyphicon glyphicon-pencil"></span
+                          ></a>
+                          <!-- link.vm -->
+                          <a
+                            href="/jackanory-grails/securityRole/showDelete/1"
+                            title="Delete"
+                            class="btn btn-danger btn-xs"
+                          >
+                            <!-- icon.vm -->
+                            <span class="glyphicon glyphicon-trash"></span
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
