@@ -6,6 +6,7 @@ import { TabsComponent } from './tabs.component';
 const routes: Routes =[
 	{ path: 'tabs', component: TabsComponent }
 ]
+
 @NgModule({
   declarations: [TabsComponent],
   imports: [

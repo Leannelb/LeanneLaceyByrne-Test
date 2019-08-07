@@ -4,6 +4,7 @@ import { ShowComponent } from './show.component';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes =[
+	{ path: '', component: ShowComponent },
 	{ path: 'show', component: ShowComponent }
 ]
 
