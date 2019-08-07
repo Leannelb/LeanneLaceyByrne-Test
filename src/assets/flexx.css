@@ -1,0 +1,21 @@
+.panel-no-border {
+    border: 0;
+    box-shadow: 0 0 0 0;
+}
+
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.table-fixed {
+    table-layout:fixed;
+}
+
+.table-fixed td.overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
