@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ShowComponent } from './show.component';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 const routes: Routes =[
@@ -16,7 +16,8 @@ const routes: Routes =[
 	CommonModule,
 	RouterModule.forChild(routes),
 	FormsModule,
-	Ng2SearchPipeModule 
+	Ng2SearchPipeModule,
+	ReactiveFormsModule
   ]
 })
 export class ShowModule { }

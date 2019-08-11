@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-show',
@@ -8,12 +9,28 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 })
 export class ShowComponent implements OnInit {
 	 searchText: any;
+	 userForm: FormGroup;
 
-	constructor() { }
+	constructor( private fb: FormBuilder) { }
 
 	ngOnInit() {
+		this.initForm();
+	}
+	initForm() {
+		this.userForm = this.fb.group({
+			name: new FormControl(''),
+			description: new FormControl(''),
+			catagory: new FormControl(''),
+			subCatagory: new FormControl(''),
+			esd: new FormControl(''),
+			email: new FormControl('')
+		});
 	}
 
+	onSubmit(){
+
+	}
+	
 	searchItems = [
 	  { id: 1, name: 'Leanne', location: 'Dublin 15' },
 	  { id: 1, name: 'Paul' , location: 'America'},
